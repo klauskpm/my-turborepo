@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import {
   Checkbox,
@@ -12,6 +12,7 @@ import {
   Stack, Tooltip
 } from '@mui/material';
 import PreviewIcon from '@mui/icons-material/Preview';
+import { Goal, useGetGoals } from '../../data-access/goals/use-get-goals';
 
 const styles = {
   list: {
@@ -21,22 +22,31 @@ const styles = {
 };
 
 export function Goals() {
-  const [checked, setChecked] = useState([0]);
+  const [checked, setChecked] = useState<any>({});
   const navigate = useNavigate();
+  const { data } = useGetGoals();
+  const goals: Goal[] = useMemo(() => data?.goals ?? [], [data?.goals]);
+
+  useEffect(() => {
+    if(!goals?.length) return;
+
+    const tempChecked = goals.reduce((acc: any, { id, done }) => {
+      acc[id] = done;
+      return acc;
+    }, {});
+
+    setChecked(tempChecked);
+  }, [goals]);
 
   const handleView = (id: number) => () => {
     navigate(`${id}`);
   };
 
-  const handleToggle = (value: number) => () => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
+  const handleToggle = (id: number) => () => {
+    const isChecked = checked[id];
+    const newChecked = {...checked};
 
-    if (currentIndex === -1) {
-      newChecked.push(value);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
+    newChecked[id] = !isChecked;
 
     setChecked(newChecked);
   };
@@ -45,32 +55,32 @@ export function Goals() {
     <Stack spacing={2}>
       <Typography variant='h4'>Your Goals</Typography>
       <List sx={styles.list}>
-        {[0, 1, 2, 3].map((value) => {
-          const labelId = `checkbox-list-label-${value}`;
+        {goals.map(({ id, title }) => {
+          const labelId = `checkbox-list-label-${id}`;
 
           return (
             <ListItem
-              key={value}
+              key={id}
               secondaryAction={
                 <Tooltip title='View Goal'>
-                  <IconButton edge='end' aria-label='View Goal' onClick={handleView(value)}>
+                  <IconButton edge='end' aria-label='View Goal' onClick={handleView(id)}>
                     <PreviewIcon />
                   </IconButton>
                 </Tooltip>
               }
               disablePadding
             >
-              <ListItemButton role={undefined} onClick={handleToggle(value)} dense>
+              <ListItemButton role={undefined} onClick={handleToggle(id)} dense>
                 <ListItemIcon>
                   <Checkbox
                     edge="start"
-                    checked={checked.indexOf(value) !== -1}
+                    checked={checked[id] || false}
                     tabIndex={-1}
                     disableRipple
                     inputProps={{ 'aria-labelledby': labelId }}
                   />
                 </ListItemIcon>
-                <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
+                <ListItemText id={labelId} primary={title} />
               </ListItemButton>
             </ListItem>
           );
