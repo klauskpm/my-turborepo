@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 
 import { Login } from './routes/Login';
+import { Layout } from './ui/Layout';
 import { Dashboard } from './routes/Dashboard';
 import { Goals } from './routes/Goals';
 
@@ -14,13 +15,18 @@ const router = createBrowserRouter([
     element: <Login />
   },
   {
-    path: 'dashboard',
-    element: <Dashboard />
+    element: <Layout />,
+    children: [
+      {
+        path: 'dashboard',
+        element: <Dashboard />
+      },
+      {
+        path: 'goals',
+        element: <Goals />
+      }
+    ]
   },
-  {
-    path: 'goals',
-    element: <Goals />
-  }
 ]);
 
 export { router };

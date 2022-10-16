@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Grid, Paper } from "@mui/material";
+import { Outlet } from "react-router-dom";
 import { Sidebar, SidebarLink } from "./Sidebar";
 
 const styles = {
@@ -22,11 +23,7 @@ const styles = {
   }
 };
 
-export interface LayoutProps {
-  children: React.ReactNode
-}
-
-export function Layout({ children }: LayoutProps) {
+export function Layout() {
   const appLinks: SidebarLink[] = [
     { text: 'Dashboard', path: '/dashboard' },
     { text: 'Goals', path: '/goals' }
@@ -38,7 +35,7 @@ export function Layout({ children }: LayoutProps) {
         <Grid item display='flex' flexDirection='row'>
           <Sidebar links={appLinks} />
           <Box sx={styles.content}>
-            {children}
+            <Outlet />
           </Box>
         </Grid>
       </Grid>
