@@ -1,4 +1,4 @@
-export function View() {
+export function Goal() {
   return (
     <span>View goal</span>
   );

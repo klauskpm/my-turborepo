@@ -1,13 +1,15 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 
-import { Login } from './routes/Login';
+import { Login } from './routes/login';
+
 import { Layout } from './ui/Layout';
-import { Dashboard } from './routes/Dashboard';
 
-import { Goals } from './routes/Goals';
-import { View as ViewGoal } from './routes/goals/View';
+import { Dashboard } from './routes/dashboard';
 
-import { Surveys } from './routes/Surveys';
+import { Goals } from './routes/goals';
+import { Goal } from './routes/goals/[id]';
+
+import { Surveys } from './routes/surveys';
 
 const router = createBrowserRouter([
   {
@@ -34,7 +36,7 @@ const router = createBrowserRouter([
           },
           {
             path: ':id',
-            element: <ViewGoal />
+            element: <Goal />
           },
         ]
       },
