@@ -1,6 +1,6 @@
 import React from 'react';
-import { Grid, Paper } from '@mui/material';
-import { Sidebar } from './Sidebar';
+import { Box, Grid, Paper } from "@mui/material";
+import { Sidebar, SidebarLink } from "./Sidebar";
 
 const styles = {
   container: {
@@ -10,10 +10,15 @@ const styles = {
   },
   paper: {
     width: '1080px',
-    padding: '12px 16px',
     display: 'flex',
     flexDirection: 'column',
     height: 'fit-content'
+  },
+  content: {
+    background: '#F6F5F0',
+    flex: 1,
+    padding: '24px 32px',
+    borderRadius: '0 4px 4px 0'
   }
 };
 
@@ -22,14 +27,19 @@ export interface LayoutProps {
 }
 
 export function Layout({ children }: LayoutProps) {
-  const appLinks = ['Inbox', 'Starred', 'Send email', 'Drafts'];
+  const appLinks: SidebarLink[] = [
+    { text: 'Dashboard', path: '/dashboard' },
+    { text: 'Goals', path: '/goals' }
+  ];
 
   return (
     <Grid container justifyContent='center' sx={styles.container}>
       <Grid container component={Paper} elevation={2} sx={styles.paper}>
         <Grid item display='flex' flexDirection='row'>
           <Sidebar links={appLinks} />
-          {children}
+          <Box sx={styles.content}>
+            {children}
+          </Box>
         </Grid>
       </Grid>
     </Grid>

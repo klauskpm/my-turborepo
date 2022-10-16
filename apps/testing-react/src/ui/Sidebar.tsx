@@ -9,23 +9,28 @@ const styles = {
   }
 };
 
+export interface SidebarLink {
+  text: string,
+  path: string
+}
+
 export interface SidebarProps {
-  links: string[]
+  links: SidebarLink[]
 }
 
 export function Sidebar ({ links }: SidebarProps) {
   return (
     <Box>
       <List>
-        {links.map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <NavLink to={`#${text}`}>
+        {links.map((link, index) => (
+          <ListItem key={link.text} disablePadding>
+            <NavLink to={link.path}>
               {({isActive}) => (
                 <ListItemButton sx={isActive ? styles.active : null}>
                   <ListItemIcon>
                     {index % 2 === 0 ? <MoveToInbox /> : <Mail />}
                   </ListItemIcon>
-                  <ListItemText primary={text} />
+                  <ListItemText primary={link.text} />
                 </ListItemButton>
               )}
             </NavLink>
