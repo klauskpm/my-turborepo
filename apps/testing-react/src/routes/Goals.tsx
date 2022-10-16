@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Checkbox,
   IconButton,
@@ -8,9 +9,9 @@ import {
   ListItemIcon,
   ListItemText,
   Typography,
-  Stack
+  Stack, Tooltip
 } from '@mui/material';
-import CommentIcon from '@mui/icons-material/Comment';
+import PreviewIcon from '@mui/icons-material/Preview';
 
 const styles = {
   list: {
@@ -21,6 +22,11 @@ const styles = {
 
 export function Goals() {
   const [checked, setChecked] = useState([0]);
+  const navigate = useNavigate();
+
+  const handleView = (id: number) => () => {
+    navigate(`${id}`);
+  };
 
   const handleToggle = (value: number) => () => {
     const currentIndex = checked.indexOf(value);
@@ -46,9 +52,11 @@ export function Goals() {
             <ListItem
               key={value}
               secondaryAction={
-                <IconButton edge="end" aria-label="comments">
-                  <CommentIcon />
-                </IconButton>
+                <Tooltip title='View Goal'>
+                  <IconButton edge='end' aria-label='View Goal' onClick={handleView(value)}>
+                    <PreviewIcon />
+                  </IconButton>
+                </Tooltip>
               }
               disablePadding
             >
