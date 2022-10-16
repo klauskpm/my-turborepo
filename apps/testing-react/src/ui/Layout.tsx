@@ -26,7 +26,8 @@ const styles = {
 export function Layout() {
   const appLinks: SidebarLink[] = [
     { text: 'Dashboard', path: '/dashboard' },
-    { text: 'Goals', path: '/goals' }
+    { text: 'Goals', path: '/goals' },
+    { text: 'Surveys', path: '/surveys' },
   ];
 
   return (

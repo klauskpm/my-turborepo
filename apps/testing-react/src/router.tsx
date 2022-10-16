@@ -4,6 +4,7 @@ import { Login } from './routes/Login';
 import { Layout } from './ui/Layout';
 import { Dashboard } from './routes/Dashboard';
 import { Goals } from './routes/Goals';
+import { Surveys } from './routes/Surveys';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: 'goals',
         element: <Goals />
+      },
+      {
+        path: 'surveys',
+        element: <Surveys />
       }
     ]
   },
