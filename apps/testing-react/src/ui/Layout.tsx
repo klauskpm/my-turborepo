@@ -1,13 +1,24 @@
 import React from 'react';
-import { Box, Grid, Paper } from "@mui/material";
-import { Outlet } from "react-router-dom";
+import { Box, Grid, Paper } from '@mui/material';
+import { Outlet } from 'react-router-dom';
+
+import { Profile } from './Profile';
 import { Sidebar, SidebarLink } from "./Sidebar";
 
 const styles = {
   container: {
     height: '100%',
     alignItems: 'center',
-    background: '#C3D4FF'
+    background: '#C3D4FF',
+    display: 'flex',
+    flexDirection: 'column'
+  },
+  header: {
+    padding: '24px 0',
+    display: 'flex',
+    flexDirection: 'row',
+    width: '1080px',
+    justifyContent: 'end'
   },
   paper: {
     width: '1080px',
@@ -31,7 +42,10 @@ export function Layout() {
   ];
 
   return (
-    <Grid container justifyContent='center' sx={styles.container}>
+    <Grid container sx={styles.container}>
+      <Grid item sx={styles.header}>
+        <Profile />
+      </Grid>
       <Grid container component={Paper} elevation={2} sx={styles.paper}>
         <Grid item display='flex' flexDirection='row'>
           <Sidebar links={appLinks} />
