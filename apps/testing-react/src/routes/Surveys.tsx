@@ -1,8 +1,10 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Typography, Stack } from '@mui/material';
 
 export function Surveys() {
   return (
-    <Typography variant='h2'>Surveys</Typography>
+    <Stack spacing={2}>
+      <Typography variant='h4'>Your Surveys</Typography>
+    </Stack>
   )
 }

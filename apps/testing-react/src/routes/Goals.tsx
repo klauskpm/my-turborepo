@@ -7,7 +7,8 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  Typography
+  Typography,
+  Stack
 } from '@mui/material';
 import CommentIcon from '@mui/icons-material/Comment';
 
@@ -35,8 +36,8 @@ export function Goals() {
   };
 
   return (
-    <>
-      <Typography variant='h3'>Goals</Typography>
+    <Stack spacing={2}>
+      <Typography variant='h4'>Your Goals</Typography>
       <List sx={styles.list}>
         {[0, 1, 2, 3].map((value) => {
           const labelId = `checkbox-list-label-${value}`;
@@ -67,6 +68,6 @@ export function Goals() {
           );
         })}
       </List>
-    </>
+    </Stack>
   )
 }
