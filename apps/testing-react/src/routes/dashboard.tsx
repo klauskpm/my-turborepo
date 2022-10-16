@@ -1,14 +1,14 @@
 import React from 'react';
 import { Stack } from "@mui/material";
-import { GoalsList } from '../ui/GoalsList';
-import { SurveysList } from '../ui/SurveysList';
+import { GoalsTodo } from '../ui/GoalsTodo';
+import { UnansweredSurveys } from '../ui/UnansweredSurveys';
 
 export function Dashboard() {
   return (
     <>
       <Stack spacing={2}>
-        <GoalsList />
-        <SurveysList />
+        <GoalsTodo />
+        <UnansweredSurveys />
       </Stack>
     </>
   )

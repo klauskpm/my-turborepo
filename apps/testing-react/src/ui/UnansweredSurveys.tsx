@@ -1,10 +1,10 @@
 import { SummaryList } from './SummaryList';
 import { useGetUnansweredSurveys } from '../data-access/surveys/use-get-unanswered-surveys';
 
-export function SurveysList() {
+export function UnansweredSurveys() {
   const { data: surveys } = useGetUnansweredSurveys();
 
   return (
-    <SummaryList title='Latest Surveys' linkTo='/surveys' list={surveys} />
+    <SummaryList title='Unanswered Surveys' linkTo='/surveys' list={surveys} />
   );
 }
