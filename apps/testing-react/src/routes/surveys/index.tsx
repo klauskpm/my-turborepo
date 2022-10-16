@@ -1,6 +1,8 @@
 import React from 'react';
 import { Typography, Stack, ListItem, ListItemButton, ListItemText, List } from '@mui/material';
 
+import { Survey, useGetSurveys } from '../../data-access/surveys/use-get-surveys';
+
 const styles = {
   list: {
     width: '100%',
@@ -9,19 +11,20 @@ const styles = {
 };
 
 export function Surveys() {
-  const list = [0, 1, 2, 3];
+  const { data } = useGetSurveys();
+  const surveys: Survey[] = data?.surveys ?? [];
 
   return (
     <Stack spacing={2}>
       <Typography variant='h4'>Your Surveys</Typography>
       <List sx={styles.list}>
-        {list.map((value) => {
-          const labelId = `checkbox-list-label-${value}`;
+        {surveys.map(({ id, title }) => {
+          const labelId = `survey-${id}`;
 
           return (
-            <ListItem key={value} disablePadding>
+            <ListItem key={id} disablePadding>
               <ListItemButton role={undefined} dense>
-                <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
+                <ListItemText id={labelId} primary={title} />
               </ListItemButton>
             </ListItem>
           );
