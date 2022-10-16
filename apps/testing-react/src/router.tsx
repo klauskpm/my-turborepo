@@ -42,7 +42,12 @@ const router = createBrowserRouter([
       },
       {
         path: 'surveys',
-        element: <Surveys />
+        children: [
+          {
+            index: true,
+            element: <Surveys />
+          }
+        ]
       }
     ]
   },
