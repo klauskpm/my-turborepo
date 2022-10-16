@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography, Stack, ListItem, ListItemButton, ListItemText, List } from '@mui/material';
 
-import { Survey, useGetSurveys } from '../../data-access/surveys/use-get-surveys';
+import { useGetSurveys } from '../../data-access/surveys/use-get-surveys';
 
 const styles = {
   list: {
@@ -11,8 +11,7 @@ const styles = {
 };
 
 export function Surveys() {
-  const { data } = useGetSurveys();
-  const surveys: Survey[] = data?.surveys ?? [];
+  const { data: surveys } = useGetSurveys();
 
   return (
     <Stack spacing={2}>
