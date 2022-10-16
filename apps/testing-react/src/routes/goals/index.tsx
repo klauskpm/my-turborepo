@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import {
   Checkbox,
@@ -12,7 +12,7 @@ import {
   Stack, Tooltip
 } from '@mui/material';
 import PreviewIcon from '@mui/icons-material/Preview';
-import { Goal, useGetGoals } from '../../data-access/goals/use-get-goals';
+import { useGetGoals } from '../../data-access/goals/use-get-goals';
 
 const styles = {
   list: {
@@ -24,8 +24,7 @@ const styles = {
 export function Goals() {
   const [checked, setChecked] = useState<any>({});
   const navigate = useNavigate();
-  const { data } = useGetGoals();
-  const goals: Goal[] = useMemo(() => data?.goals ?? [], [data?.goals]);
+  const { data: goals } = useGetGoals();
 
   useEffect(() => {
     if(!goals?.length) return;

@@ -10,5 +10,8 @@ export const handlers = [
 
   graphql.query('GetGoals', (req, res, ctx) => {
     return res(ctx.data({ goals: goalsData}));
+  }),
+  graphql.query('GetGoalsTodo', (req, res, ctx) => {
+    return res(ctx.data({ goals: goalsData.filter((goal => goal.done))}));
   })
 ];

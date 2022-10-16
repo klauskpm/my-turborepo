@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { gql, useQuery } from '@apollo/client';
 
 export interface Goal {
@@ -21,5 +22,8 @@ export const GET_GOALS = gql`
 `;
 
 export function useGetGoals() {
-  return useQuery<GetGoalsData>(GET_GOALS);
+  const { loading, error, data } = useQuery<GetGoalsData>(GET_GOALS);
+  const goals: Goal[] = useMemo(() => data?.goals ?? [], [data?.goals]);
+
+  return { loading, error, data: goals }
 }

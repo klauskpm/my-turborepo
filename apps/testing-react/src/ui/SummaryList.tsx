@@ -21,7 +21,7 @@ const styles = {
 
 export interface SummaryListProps {
   title: string
-  list: number[]
+  list: number[] | any[]
   linkTo: string
 }
 
@@ -31,13 +31,15 @@ export function SummaryList({ title, list, linkTo }: SummaryListProps) {
     <Paper elevation={2} sx={styles.container}>
       <Typography variant='h6'>{title}</Typography>
       <List sx={styles.list}>
-        {list.map((value) => {
-          const labelId = `checkbox-list-label-${value}`;
+        {list.map((entry) => {
+          const id = entry?.id || entry;
+          const title = entry?.title || entry;
+          const labelId = `checkbox-list-label-${id}`;
 
           return (
-            <ListItem key={value} disablePadding>
+            <ListItem key={id} disablePadding>
               <ListItemButton role={undefined} dense>
-                <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
+                <ListItemText id={labelId} primary={title} />
               </ListItemButton>
             </ListItem>
           );
