@@ -31,9 +31,7 @@ export function SummaryList({ title, list, linkTo }: SummaryListProps) {
     <Paper elevation={2} sx={styles.container}>
       <Typography variant='h6'>{title}</Typography>
       <List sx={styles.list}>
-        {list.map((entry) => {
-          const id = entry?.id || entry;
-          const title = entry?.title || entry;
+        {list.map(({ id, title }) => {
           const labelId = `checkbox-list-label-${id}`;
 
           return (

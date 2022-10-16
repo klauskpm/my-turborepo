@@ -20,8 +20,8 @@ export const GET_SURVEYS = gql`
 `;
 
 export function useGetSurveys() {
-  const { loading, error, data } = useQuery<GetSurveysData>(GET_SURVEYS);
-  const surveys = useMemo(() => data?.surveys ?? [], [data?.surveys]);
+  const { loading, error, data } = useQuery<GetSurveysData>(GET_SURVEYS, { fetchPolicy: 'network-only' });
+  const surveys: Survey[] = useMemo(() => data?.surveys ?? [], [data?.surveys]);
 
   return { loading, error, data: surveys };
 }

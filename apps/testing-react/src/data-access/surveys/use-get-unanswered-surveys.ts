@@ -22,8 +22,8 @@ export const GET_UNANSWERED_SURVEYS = gql`
 `;
 
 export function useGetUnansweredSurveys() {
-  const {loading, error, data} = useQuery<GetSurveysData>(GET_UNANSWERED_SURVEYS);
-  const surveys = useMemo(() => data?.surveys || [], [data?.surveys]);
+  const {loading, error, data} = useQuery<GetSurveysData>(GET_UNANSWERED_SURVEYS, { fetchPolicy: 'network-only' });
+  const surveys: Survey[] = useMemo(() => data?.surveys || [], [data?.surveys]);
 
   return { loading, error, data: surveys };
 }

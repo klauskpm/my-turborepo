@@ -23,7 +23,7 @@ export const GET_GOALS_TODO = gql`
 
 export function useGetGoalsTodo() {
   const { loading, data, error } = useQuery<GetGoalsData>(GET_GOALS_TODO);
-  const goals = useMemo(() => data?.goals ?? [], [data?.goals]);
+  const goals: Goal[] = useMemo(() => data?.goals ?? [], [data?.goals]);
 
   return { loading, data: goals, error };
 }
