@@ -1,7 +1,7 @@
 import React from 'react';
 import { Stack } from "@mui/material";
 import { GoalsTodo } from '../ui/GoalsTodo';
-import { UnansweredSurveys } from '../ui/UnansweredSurveys';
+import { UnansweredSurveys } from '@survey/feature-reporting';
 
 export function Dashboard() {
   return (
