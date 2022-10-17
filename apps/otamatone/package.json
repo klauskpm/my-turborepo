@@ -23,7 +23,8 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2",
     "web-vitals": "^2.1.4",
-    "@survey/data-access": "*"
+    "@survey/data-access": "*",
+    "@shared/ui": "*"
   },
   "devDependencies": {
     "@types/jest": "^27.5.2",

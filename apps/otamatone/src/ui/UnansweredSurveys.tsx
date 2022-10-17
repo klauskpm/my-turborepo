@@ -1,4 +1,4 @@
-import { SummaryList } from './SummaryList';
+import { SummaryList } from '@shared/ui';
 import { useGetUnansweredSurveys } from '@survey/data-access';
 
 export function UnansweredSurveys() {

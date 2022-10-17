@@ -1,4 +1,4 @@
-import { SummaryList } from './SummaryList';
+import { SummaryList } from '@shared/ui';
 import { useGetGoalsTodo } from '../data-access/goals/use-get-goals-todo';
 
 export function GoalsTodo() {

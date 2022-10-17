@@ -3,7 +3,7 @@ import { Box, Grid, Paper } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 
 import { Profile } from './Profile';
-import { Sidebar, SidebarLink } from "./Sidebar";
+import { Sidebar, SidebarLink } from '@shared/ui';
 
 const styles = {
   container: {
