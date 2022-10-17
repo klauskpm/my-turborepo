@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 
 import { Profile } from './Profile';
 import { Sidebar, SidebarLink } from '@shared/ui';
+import otamatone_logo from '../assets/logo_otamatone.svg';
 
 const styles = {
   container: {
@@ -18,7 +19,8 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     width: '1080px',
-    justifyContent: 'end'
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   paper: {
     width: '1080px',
@@ -44,6 +46,7 @@ export function Layout() {
   return (
     <Grid container sx={styles.container}>
       <Grid item sx={styles.header}>
+        <img src={otamatone_logo} alt="" />
         <Profile />
       </Grid>
       <Grid container component={Paper} elevation={2} sx={styles.paper}>
