@@ -1,6 +1,6 @@
 import React from 'react';
 import { Stack } from "@mui/material";
-import { GoalsTodo } from '../ui/GoalsTodo';
+import { GoalsTodo } from '@goal/feature-goal';
 import { UnansweredSurveys } from '@survey/feature-reporting';
 
 export function Dashboard() {

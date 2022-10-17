@@ -1,5 +1,5 @@
 import { SummaryList } from '@shared/ui';
-import { useGetGoalsTodo } from '../data-access/goals/use-get-goals-todo';
+import { useGetGoalsTodo } from '@goal/data-access';
 
 export function GoalsTodo() {
   const { data: goals } = useGetGoalsTodo();

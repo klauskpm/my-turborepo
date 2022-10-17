@@ -1,14 +1,14 @@
 import { useMemo } from 'react';
 import { gql, useQuery } from '@apollo/client';
 
-export interface Goal {
+export interface GoalTodo {
   id: number
   title: string
   done: boolean
 }
 
-export interface GetGoalsData {
-  goals: Goal[]
+export interface GetGoalsTodoData {
+  goals: GoalTodo[]
 }
 
 export const GET_GOALS_TODO = gql`
@@ -22,8 +22,8 @@ export const GET_GOALS_TODO = gql`
 `;
 
 export function useGetGoalsTodo() {
-  const { loading, data, error } = useQuery<GetGoalsData>(GET_GOALS_TODO);
-  const goals: Goal[] = useMemo(() => data?.goals ?? [], [data?.goals]);
+  const { loading, data, error } = useQuery<GetGoalsTodoData>(GET_GOALS_TODO);
+  const goals: GoalTodo[] = useMemo(() => data?.goals ?? [], [data?.goals]);
 
   return { loading, data: goals, error };
 }
