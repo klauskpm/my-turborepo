@@ -1,5 +1,5 @@
 import { SummaryList } from './SummaryList';
-import { useGetUnansweredSurveys } from '../data-access/surveys/use-get-unanswered-surveys';
+import { useGetUnansweredSurveys } from '@survey/data-access';
 
 export function UnansweredSurveys() {
   const { data: surveys } = useGetUnansweredSurveys();

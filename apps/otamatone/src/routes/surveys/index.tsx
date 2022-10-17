@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography, Stack, ListItem, ListItemButton, ListItemText, List } from '@mui/material';
 
-import { useGetSurveys } from '../../data-access/surveys/use-get-surveys';
+import { useGetSurveys } from '@survey/data-access';
 
 const styles = {
   list: {
