@@ -33,7 +33,11 @@ const styles = {
   }
 };
 
-export function Layout({ children }) {
+export interface LayoutProps {
+  children: React.ReactNode
+}
+
+export function Layout({ children }: LayoutProps) {
   return (
     <Grid container sx={styles.container}>
       <Grid item sx={styles.header}>

@@ -26,7 +26,7 @@ export function LoginForm(props: LoginFormProps) {
       <TextField variant='outlined' label='E-mail' autoFocus margin='normal' />
       <TextField variant='outlined' label='Password' margin='normal' />
       <Box sx={styles.actions}>
-        <Button variant='contained' onClick={onSubmit}>Submit</Button>
+        <Button variant='contained' onClick={() => onSubmit()}>Submit</Button>
       </Box>
     </Paper>
   )

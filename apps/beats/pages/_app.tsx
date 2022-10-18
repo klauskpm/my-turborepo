@@ -1,4 +1,5 @@
 import React from 'react';
+import { AppProps } from 'next/app';
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
@@ -18,7 +19,7 @@ require('../mocks')
 
 const theme = createTheme();
 
-export default function App({ Component, pageProps}) {
+export default function App({ Component, pageProps}: AppProps) {
   return (
     <React.StrictMode>
       <ThemeProvider theme={theme}>

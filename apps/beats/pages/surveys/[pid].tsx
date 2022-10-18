@@ -4,7 +4,7 @@ import { SurveyDetailsBox } from '@survey/ui';
 import { Layout } from '../../components/Layout';
 
 function SurveyDetailsPage() {
-  const params = {};
+  const params: any = {};
   const { data: survey } = useGetSurveyDetails(Number(params.pid));
 
   if (!survey) return <div>Empty data</div>;
