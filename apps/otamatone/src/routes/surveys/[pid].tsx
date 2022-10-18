@@ -1,7 +1,8 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import { Button, Grid, Paper, Typography } from '@mui/material';
+import { Button, Grid, Typography } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
+import { SurveyDetailsBox } from '@survey/ui';
 import { useGetSurveyDetails } from '@survey/data-access';
 
 export function SurveyDetails() {
@@ -25,19 +26,7 @@ export function SurveyDetails() {
       </Grid>
       {!!survey && (
         <Grid item xs={12}>
-          <Typography variant='body1'>{survey.title}</Typography>
-          <Grid container spacing={2}>
-            {survey.responses.map((response) => {
-              return (
-                <Grid item xs={4}>
-                  <Paper>
-                    <Typography variant='body2'>Question title: {response.questionTitle}</Typography>
-                    <Typography variant='body2'>Answered: {response.percentage}%</Typography>
-                  </Paper>
-                </Grid>
-              );
-            })}
-          </Grid>
+          <SurveyDetailsBox title={survey.title} responses={survey.responses} />
         </Grid>
       )}
     </Grid>
