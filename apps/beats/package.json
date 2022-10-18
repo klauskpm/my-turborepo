@@ -24,7 +24,9 @@
     "react-dom": "18.2.0",
     "@user/feature-login": "*",
     "@survey/feature-reporting": "*",
-    "@survey/ui": "*"
+    "@survey/ui": "*",
+    "@user/feature-profile": "*",
+    "@shared/ui": "*"
   },
   "devDependencies": {
     "@types/jest": "^27.5.2",
