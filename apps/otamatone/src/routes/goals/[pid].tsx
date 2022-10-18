@@ -1,8 +1,8 @@
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Button, Grid, Typography } from "@mui/material";
 import { useNavigate } from 'react-router-dom';
+import { Button, Grid, Typography } from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-export function Goal() {
+export function GoalDetails() {
   const navigate = useNavigate();
 
   const handleReturn = () => {
@@ -17,7 +17,7 @@ export function Goal() {
         </Button>
       </Grid>
       <Grid item>
-        <Typography variant='h5'>Your Goal</Typography>
+        <Typography variant='h5'>Goal Details</Typography>
       </Grid>
     </Grid>
   );

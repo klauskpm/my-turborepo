@@ -7,7 +7,7 @@ import { Layout } from './ui/Layout';
 import { Dashboard } from './routes/dashboard';
 
 import { Goals } from './routes/goals';
-import { Goal } from './routes/goals/[pid]';
+import { GoalDetails } from './routes/goals/[pid]';
 
 import { Surveys } from './routes/surveys';
 import { SurveyDetails } from './routes/surveys/[pid]';
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
           },
           {
             path: ':pid',
-            element: <Goal />
+            element: <GoalDetails />
           },
         ]
       },
