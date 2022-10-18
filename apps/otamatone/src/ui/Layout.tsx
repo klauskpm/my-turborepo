@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Grid, Paper } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 
-import { Profile } from './Profile';
+import { Profile } from '@user/feature-profile';
 import { Sidebar, SidebarLink } from '@shared/ui';
 import otamatone_logo from '../assets/logo_otamatone.svg';
 
