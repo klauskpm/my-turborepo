@@ -1,6 +1,6 @@
 import { graphql } from 'msw';
 
-import { surveysData } from './surveys-data';
+import { surveysData, surveyWithResponses } from "./surveys-data";
 import { goalsData } from './goals-data';
 
 export const handlers = [
@@ -10,6 +10,9 @@ export const handlers = [
   graphql.query('GetUnansweredSurveys', (req, res, ctx) => {
     const surveys = surveysData.filter(((survey) => !survey.answered));
     return res(ctx.data({ surveys }));
+  }),
+  graphql.query('GetSurveyDetails', (req, res, ctx) => {
+    return res(ctx.data({ survey: surveyWithResponses }));
   }),
 
   graphql.query('GetGoals', (req, res, ctx) => {
