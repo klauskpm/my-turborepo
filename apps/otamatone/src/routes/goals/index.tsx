@@ -10,7 +10,7 @@ import { GoalsCheckList } from '@goal/feature-goal';
 export function Goals() {
   const navigate = useNavigate();
 
-  const handleView = (id: number) => () => {
+  const handleView = (id: number) => {
     navigate(`${id}`);
   };
 
