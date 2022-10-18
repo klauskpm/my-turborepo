@@ -1,10 +1,14 @@
-import { SurveyListPage } from "@survey/feature-reporting";
 import React from "react";
+import { useRouter } from "next/router";
+import { SurveyListPage } from "@survey/feature-reporting";
+
 import { Layout } from '../../components/Layout';
 
 function SurveysPage() {
-  const handleClickItem = () => {
-    console.log('handle it');
+  const router = useRouter();
+
+  const handleClickItem = (id: number) => {
+    router.push(`surveys/${id}`);
   };
 
   return (
