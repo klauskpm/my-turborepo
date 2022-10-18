@@ -7,9 +7,10 @@ import { Layout } from './ui/Layout';
 import { Dashboard } from './routes/dashboard';
 
 import { Goals } from './routes/goals';
-import { Goal } from './routes/goals/[id]';
+import { Goal } from './routes/goals/[pid]';
 
 import { Surveys } from './routes/surveys';
+import { SurveyDetails } from './routes/surveys/[pid]';
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
             element: <Goals />
           },
           {
-            path: ':id',
+            path: ':pid',
             element: <Goal />
           },
         ]
@@ -46,7 +47,11 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <Surveys />
-          }
+          },
+          {
+            path: ':pid',
+            element: <SurveyDetails />
+          },
         ]
       }
     ]

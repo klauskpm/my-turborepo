@@ -10,7 +10,12 @@ const styles = {
   }
 };
 
-export function SurveyListPage() {
+export interface SurveyListPageProps {
+  onClickItem: Function
+}
+
+export function SurveyListPage(props: SurveyListPageProps) {
+  const { onClickItem } = props;
   const { data: surveys } = useGetSurveys();
 
   return (
@@ -22,7 +27,7 @@ export function SurveyListPage() {
 
           return (
             <ListItem key={id} disablePadding>
-              <ListItemButton role={undefined} dense>
+              <ListItemButton role={undefined} dense onClick={() => onClickItem(id)}>
                 <ListItemText id={labelId} primary={title} />
               </ListItemButton>
             </ListItem>
