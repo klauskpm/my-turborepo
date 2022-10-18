@@ -1,5 +1,5 @@
 {
-  "name": "otomatone",
+  "name": "otamatone",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -15,6 +15,8 @@
     "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.9",
+    "@shared/ui": "*",
+    "@survey/feature-reporting": "*",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -22,15 +24,14 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2",
-    "web-vitals": "^2.1.4",
-    "@survey/feature-reporting": "*",
-    "@shared/ui": "*"
+    "web-vitals": "^2.1.4"
   },
   "devDependencies": {
     "@types/jest": "^27.5.2",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",
+    "msw": "^0.47.4",
     "typescript": "^4.6.4",
     "vite": "^3.1.0"
   }

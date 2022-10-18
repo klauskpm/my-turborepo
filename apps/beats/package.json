@@ -35,6 +35,7 @@
     "tsconfig": "*",
     "@types/node": "^17.0.12",
     "@types/react": "18.0.17",
+    "msw": "^0.47.4",
     "typescript": "^4.5.3"
   }
 }
