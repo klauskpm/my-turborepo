@@ -8,7 +8,7 @@ export const handlers = [
     return res(ctx.data({ surveys: surveysData }));
   }),
   graphql.query('GetUnansweredSurveys', (req, res, ctx) => {
-    const surveys = surveysData.filter(((survey) => survey.answered));
+    const surveys = surveysData.filter(((survey) => !survey.answered));
     return res(ctx.data({ surveys }));
   }),
 
