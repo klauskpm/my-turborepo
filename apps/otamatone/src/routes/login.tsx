@@ -1,5 +1,6 @@
 import { Grid } from '@mui/material';
 import { LoginForm } from '@user/feature-login';
+import { useNavigate } from "react-router-dom";
 
 const styles = {
   container: {
@@ -10,9 +11,15 @@ const styles = {
 };
 
 function Login() {
+  const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    navigate('/dashboard')
+  };
+
   return (
     <Grid container justifyContent='center' sx={styles.container}>
-      <LoginForm />
+      <LoginForm onSubmit={handleSubmit}/>
     </Grid>
   );
 }
