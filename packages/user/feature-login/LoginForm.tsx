@@ -13,14 +13,20 @@ const styles = {
   }
 };
 
-export function LoginForm() {
+export interface LoginFormProps {
+  onSubmit: Function
+}
+
+export function LoginForm(props: LoginFormProps) {
+  const { onSubmit } = props;
+
   return (
     <Paper sx={styles.paper} elevation={3}>
       <Typography variant='h4'>Welcome</Typography>
       <TextField variant='outlined' label='E-mail' autoFocus margin='normal' />
       <TextField variant='outlined' label='Password' margin='normal' />
       <Box sx={styles.actions}>
-        <Button variant='contained'>Submit</Button>
+        <Button variant='contained' onClick={onSubmit}>Submit</Button>
       </Box>
     </Paper>
   )
