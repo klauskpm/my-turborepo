@@ -4,7 +4,8 @@ const withTM = require("next-transpile-modules")([
   "@shared/ui",
   "@mui/material",
   "@survey/feature-reporting",
-  "@survey/data-access"
+  "@survey/data-access",
+  "@survey/ui"
 ]);
 
 module.exports = withTM({

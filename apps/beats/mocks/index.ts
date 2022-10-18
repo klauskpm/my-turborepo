@@ -1,6 +1,8 @@
+import { createWorker } from './browser';
+
 async function initMocks() {
   if (typeof window !== 'undefined') {
-    const { worker } = await import('./browser')
+    const worker = createWorker();
     worker.start()
   }
 }
