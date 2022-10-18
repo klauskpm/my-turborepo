@@ -14,11 +14,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-// import { worker } from './mocks/browser';
-//
-// if (process.env.NODE_ENV === 'development') {
-//   worker.start();
-// }
+require('../mocks')
 
 const theme = createTheme();
 
