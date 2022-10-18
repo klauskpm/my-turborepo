@@ -1,2 +1,2 @@
-export * from './use-get-goals';
-export * from './use-get-goals-todo';
+export * from './src/use-get-goals';
+export * from './src/use-get-goals-todo';

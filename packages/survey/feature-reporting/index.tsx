@@ -1,2 +1,2 @@
-export * from './SurveyListPage';
-export * from './UnansweredSurveys';
+export * from './src/SurveyListPage';
+export * from './src/UnansweredSurveys';

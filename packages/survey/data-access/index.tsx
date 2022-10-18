@@ -1,3 +1,3 @@
-export * from './use-get-surveys';
-export * from './use-get-unanswered-surveys';
-export * from './use-get-survey-details';
+export * from './src/use-get-surveys';
+export * from './src/use-get-unanswered-surveys';
+export * from './src/use-get-survey-details';

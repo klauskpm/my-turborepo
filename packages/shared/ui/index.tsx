@@ -1,3 +1,3 @@
 import * as React from "react";
-export * from './Sidebar';
-export * from './SummaryList';
+export * from './src/Sidebar';
+export * from './src/SummaryList';

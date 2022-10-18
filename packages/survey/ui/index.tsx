@@ -1,2 +1,2 @@
-export * from './SurveyDetailsBox';
-export * from './SurveyResponseBox';
+export * from './src/SurveyDetailsBox';
+export * from './src/SurveyResponseBox';
