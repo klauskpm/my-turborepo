@@ -4,12 +4,15 @@ import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { RouterProvider } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
+import { startBrowserWorker } from '@shared/util-msw';
+
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 import './index.css';
+import { handlers } from './mocks/handlers';
 import { router } from './router';
 import reportWebVitals from './reportWebVitals';
 
@@ -18,10 +21,8 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-import { worker } from './mocks/browser';
-
 if (process.env.NODE_ENV === 'development') {
-  worker.start();
+  startBrowserWorker(handlers);
 }
 
 const root = ReactDOM.createRoot(
