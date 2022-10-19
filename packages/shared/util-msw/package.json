@@ -1,0 +1,12 @@
+{
+  "name": "@shared/util-msw",
+  "version": "0.0.0",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "msw": "^0.47.4",
+    "typescript": "^4.6.4"
+  }
+}
