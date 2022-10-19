@@ -26,7 +26,8 @@
     "@survey/feature-reporting": "*",
     "@survey/ui": "*",
     "@user/feature-profile": "*",
-    "@shared/ui": "*"
+    "@shared/ui": "*",
+    "@shared/util-msw": "*"
   },
   "devDependencies": {
     "@types/jest": "^27.5.2",
