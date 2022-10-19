@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { MemoryRouter } from 'react-router-dom';
 
-import { Sidebar } from '@shared/ui';
+import { Sidebar } from './Sidebar';
 
 export default {
   title: 'Shared/ui/Sidebar',
@@ -20,5 +20,8 @@ const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />
 
 export const Primary = Template.bind({});
 Primary.args = {
-  links: [{text: 'opa', path: '#' }]
+  links: [
+    {text: 'soup', path: '#' },
+    {text: 'noddles', path: '#' }
+  ]
 }
